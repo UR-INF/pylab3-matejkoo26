@@ -34,3 +34,16 @@ for i in tab:
     plik.write(str(i)+", ")
     
 ## zadanie 4 ##
+import numpy as numpy
+
+def funkcja():
+    tablica = numpy.array([[2,3,4,5,6],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]])
+    i = 1
+
+    while i<5:
+        for j in range (5):
+            tablica[i][j] = pow(tablica[i-1][j],2)
+        i += 1
+    return tablica
+
+print(funkcja())    
