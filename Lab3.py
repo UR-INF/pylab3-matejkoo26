@@ -47,3 +47,36 @@ def funkcja():
     return tablica
 
 print(funkcja())    
+
+## zadanie 6 ##
+import random
+
+
+def deck():
+    talia = []
+    rangi = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'D', 'K', 'A']
+    kolory = ['c', 'd', 'h', 's']
+    for i in rangi:
+        for l in kolory:
+            talia.append((i, l))
+    return talia
+
+
+def shuffle_deck(deck):
+    random.shuffle(deck)
+    return deck
+
+
+def deal(deck, n):
+    stolik = []
+    for i in range(0, n):
+        stolik.append(random.sample(deck, 5))
+    return stolik
+
+
+talia = deck()
+potasowanaTalia = shuffle_deck(talia)
+print('Podaj ilość graczy przy stole: ')
+l_graczy = int(input())
+rozdanie_dla_graczy = deal(potasowanaTalia,l_graczy )
+print(rozdanie_dla_graczy)
